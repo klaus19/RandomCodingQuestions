@@ -15,7 +15,7 @@ public class Power2 {
 
     public static void main(String[] args) {
         Power2 p2 = new Power2();
-        int n=3;
+        int n=4;
         System.out.println(p2.isPowerOfTwo(n));
     }
 }
