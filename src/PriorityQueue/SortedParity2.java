@@ -1,24 +1,35 @@
 package PriorityQueue;
 
+
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 public class SortedParity2 {
 
-    public long numberOfWeeks(int[] milestones) {
+    public int[] sortArrayByParityII(int[] A) {
 
-        int i,j,max=-1,n=milestones.length;
+        int[] out = new int[A.length];
 
-        long sum=0;
-        for(i=0;i<n;i++)
-        {
-            max=Math.max(max, milestones[i]);
-            sum+=milestones[i];
+        int even = 0;
+        int odd = 1;
+
+        for(int i = 0; i < A.length; i++){
+            if(A[i] % 2 == 0 || A[i] == 0){
+                out[even] = A[i];
+                even = even + 2;
+            }
+            else{
+                out[odd] = A[i];
+                odd = odd + 2;
+            }
         }
 
+        return out;
+    }
 
-        long x=sum-max;
-
-        if(max-x>1)
-            return sum-(max-x-1);
-        return sum;
-
+    public static void main(String[] args) {
+        SortedParity2 sp2 = new SortedParity2();
+        int[]arr = new int[]{4,2,5,7};
+        System.out.println(Arrays.toString(sp2.sortArrayByParityII(arr)));
     }
 }
