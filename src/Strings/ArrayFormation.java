@@ -6,12 +6,12 @@ public class ArrayFormation {
     public String makeSentence(String[]st){
 
         String s="";
-        String t = s.replace(""," ");
+
 
         for (int i=0;i<st.length;i++){
-            t+=st[i];
+            s= s+""+st[i];
         }
-        return t;
+        return s;
     }
 
     public static void main(String[] args) {
